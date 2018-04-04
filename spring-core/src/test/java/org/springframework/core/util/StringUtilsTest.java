@@ -19,7 +19,6 @@ public class StringUtilsTest {
         strList.add("a");
         strList.add("b");
         strList.add("c");
-        strList.add(strList);
 
         String res = StringUtils.collectionToDelimitedString(strList, ",", "p", "s");
         Assert.assertEquals("pas,pbs,pcs", res);
