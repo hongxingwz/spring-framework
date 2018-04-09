@@ -2,7 +2,10 @@ package org.springframework.core.test;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.core.SpringVersion;
 
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -32,15 +35,33 @@ public class Test01 {
 
     private String conanicalName(String name) {
         String conanicalName = name;
-        String resolvedName;
+        String getName;
         do {
-            resolvedName = refMap.get(conanicalName);
-            if (resolvedName != null) {
-                conanicalName = resolvedName;
+            getName = refMap.get(conanicalName);
+            if (getName != null) {
+                conanicalName = getName;
             }
-        } while (resolvedName != null);
+        } while (getName != null);
 
         return conanicalName;
+    }
+
+    public static void main(String[] args) throws NoSuchMethodException {
+        Method conanicalName = Test01.class.getDeclaredMethod("conanicalName", String.class);
+        Parameter[] parameters = conanicalName.getParameters();
+        for (Parameter parameter : parameters) {
+            System.out.println(parameter.isNamePresent());
+            System.out.println(parameter.getName());
+        }
+    }
+    @Test
+    public void test04() throws NoSuchMethodException {
+        Method conanicalName = this.getClass().getDeclaredMethod("conanicalName", String.class);
+        Parameter[] parameters = conanicalName.getParameters();
+        for (Parameter parameter : parameters) {
+            System.out.println(parameter.isNamePresent());
+            System.out.println(parameter.getName());
+        }
     }
 
     @Test
@@ -48,5 +69,11 @@ public class Test01 {
         Map<String, String> getenv = System.getenv();
         Set<String> strings = getenv.keySet();
         System.out.println(strings.size());
+    }
+
+    @Test
+    public void test03() {
+        String version = SpringVersion.getVersion();
+        System.out.println(version);
     }
 }
