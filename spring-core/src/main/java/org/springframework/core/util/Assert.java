@@ -7,6 +7,23 @@ package org.springframework.core.util;
 public abstract class Assert {
 
     /**
+     * 断言一个boolean表达式，抛出一个{@code IllegalStateException}
+     * 如果表达式执行后是{@code false}的话。
+     * <p>调用{@link #isTrue}如果你希望断言失败时抛出一个{@code IllegalArgumentException}。
+     * <pre class="code">
+     * Assert.state(id == null, "The id property must not already be initialized");
+     * </pre>
+     * @param expression 一个boolean表达式
+     * @param message 如果断言失败抛出的异常信息
+     * @throws IllegalStateException 如果{@code expression}是{@code false}
+     */
+    public static void state(boolean expression, String message) {
+        if (!expression) {
+            throw new IllegalStateException(message);
+        }
+    }
+
+    /**
      * 断言给定的字符串包含有效的文本内容；也就是，其一定不为能{@code null}
      * 一定要包含至少一个非空字符。
      * <pre class="code">Assert.hasText(name, "'name' must not be empty");</pre>
