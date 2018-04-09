@@ -1,4 +1,4 @@
-package org.springframework.core.util;
+package org.springframework.util;
 
 /**
  * @author jianglei

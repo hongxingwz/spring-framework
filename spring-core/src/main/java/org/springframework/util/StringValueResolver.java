@@ -1,4 +1,4 @@
-package org.springframework.core.util;
+package org.springframework.util;
 
 /**
  * 用于解析字符串的策略接口。

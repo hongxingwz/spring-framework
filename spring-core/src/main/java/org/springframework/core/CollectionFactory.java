@@ -1,8 +1,8 @@
 package org.springframework.core;
 
-import org.springframework.core.util.Assert;
-import org.springframework.core.util.LinkedMultiValueMap;
-import org.springframework.core.util.MultiValueMap;
+import org.springframework.util.Assert;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import java.util.*;
 

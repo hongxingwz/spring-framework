@@ -2,8 +2,8 @@ package org.springframework.core.env;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.core.util.Assert;
-import org.springframework.core.util.ObjectUtils;
+import org.springframework.util.Assert;
+import org.springframework.util.ObjectUtils;
 
 /**
  * @author jianglei

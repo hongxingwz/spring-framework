@@ -1,4 +1,4 @@
-package org.springframework.core.util;
+package org.springframework.util;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

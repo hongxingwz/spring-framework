@@ -1,4 +1,4 @@
-package org.springframework.core.util;
+package org.springframework.util;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

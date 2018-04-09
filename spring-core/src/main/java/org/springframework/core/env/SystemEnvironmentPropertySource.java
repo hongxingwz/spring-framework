@@ -1,6 +1,6 @@
 package org.springframework.core.env;
 
-import org.springframework.core.util.Assert;
+import org.springframework.util.Assert;
 
 import java.util.Map;
 

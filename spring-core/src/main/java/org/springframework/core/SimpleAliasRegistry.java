@@ -1,7 +1,7 @@
 package org.springframework.core;
 
-import org.springframework.core.util.Assert;
-import org.springframework.core.util.StringUtils;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;

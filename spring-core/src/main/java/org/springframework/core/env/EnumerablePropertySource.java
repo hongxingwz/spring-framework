@@ -1,6 +1,6 @@
 package org.springframework.core.env;
 
-import org.springframework.core.util.ObjectUtils;
+import org.springframework.util.ObjectUtils;
 
 /**
  * @author jianglei

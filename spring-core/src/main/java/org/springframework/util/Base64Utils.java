@@ -1,6 +1,6 @@
-package org.springframework.core.util;
+package org.springframework.util;
 
-import org.springframework.core.lang.UsesJava8;
+import org.springframework.lang.UsesJava8;
 
 import java.nio.charset.Charset;
 import java.util.Base64;

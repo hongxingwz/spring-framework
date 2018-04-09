@@ -1,6 +1,6 @@
 package org.springframework.core.env;
 
-import org.springframework.core.util.StringUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.Collection;
 import java.util.List;

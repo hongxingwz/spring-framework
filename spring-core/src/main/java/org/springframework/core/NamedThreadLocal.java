@@ -1,6 +1,6 @@
 package org.springframework.core;
 
-import org.springframework.core.util.Assert;
+import org.springframework.util.Assert;
 
 /**
  * {@link ThreadLocal}子类，在{@link #toString()}方法

@@ -1,6 +1,6 @@
 package org.springframework.core;
 
-import org.springframework.core.lang.UsesJava8;
+import org.springframework.lang.UsesJava8;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
