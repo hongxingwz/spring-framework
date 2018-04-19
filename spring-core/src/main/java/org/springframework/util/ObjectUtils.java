@@ -427,4 +427,37 @@ public abstract class ObjectUtils {
     }
 
 
+    /**
+     * 妆给定的数组(可以是基本类型数据)转换成为一个对象数组(是基本类型的包装类型)。
+     * <p>source如果为{@code null}将转换成一个空的对象数组。
+     *
+     * @param source 数组(可能是基本数组类型数组)
+     * @return 相关的对象数组(从不为null)
+     * @throws IllegalArgumentException 如果参数不是一个数组的话
+     */
+    public static Object[] toObjectArray(Object source) {
+        if (source instanceof Object[]) {
+            return (Object[]) source;
+        }
+        if (source == null) {
+            return new Object[0];
+        }
+        if (!source.getClass().isArray()) {
+            throw new IllegalArgumentException("Source is not an array: " + source);
+        }
+
+        int length = Array.getLength(source);
+        if (length == 0) {
+            return new Object[0];
+        }
+        Class<?> wrapperType = Array.get(source, 0).getClass();
+        Object[] newArray = (Object[]) Array.newInstance(wrapperType, length);
+        for(int i = 0; i < length; i++) {
+            newArray[i] = Array.get(source, i);
+        }
+
+        return newArray;
+    }
+
+
 }
