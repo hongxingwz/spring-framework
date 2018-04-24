@@ -13,7 +13,12 @@ import java.util.function.Function;
  */
 // TODO: 2018/4/19 没有写完 
 public class ConcurrentReferenceHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>{
-    
+
+    public ConcurrentReferenceHashMap() {
+    }
+
+    public ConcurrentReferenceHashMap(int initialCapacity) {
+    }
 
     @Override
     public V putIfAbsent(K key, V value) {

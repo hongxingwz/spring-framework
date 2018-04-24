@@ -78,4 +78,16 @@ public abstract class Assert {
         }
     }
 
+    /**
+     * 断言一个布尔表达式，抛出一个{@code IllegalArgumentException}
+     * 如果表达式的执行结果为{@code false}
+     * @param expression 一个布尔表达式
+     * @param message 如果断言失败的话抛出的异常信息
+     * @throws IllegalArgumentException 如果{@code expression}为{@code false}
+     */
+    public static void isTrue(boolean expression, String message) {
+        if (!expression) {
+            throw new IllegalArgumentException(message);
+        }
+    }
 }
