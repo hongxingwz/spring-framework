@@ -459,5 +459,26 @@ public abstract class ObjectUtils {
         return newArray;
     }
 
+    public static String identityToString(Object obj) {
+        if (obj == null) {
+            return EMPTY_STRING;
+        }
+        return obj.getClass().getName() + "@" + getIdentityHexString(obj);
+    }
+
+    public static String getIdentityHexString(Object ob) {
+        return Integer.toHexString(System.identityHashCode(ob));
+    }
+
+    public static String getDisplayString(Object obj) {
+        if (obj == null) {
+            return EMPTY_STRING;
+        }
+        return nullSafeToString(obj);
+    }
+
+    private static String nullSafeToString(Object obj) {
+        return null;
+    }
 
 }

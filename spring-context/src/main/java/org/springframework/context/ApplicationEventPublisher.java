@@ -5,4 +5,8 @@ package org.springframework.context;
  * @since 2018/4/19
  */
 public interface ApplicationEventPublisher {
+
+    void publishEvent(ApplicationEvent event);
+
+    void publishEvent(Object event);
 }

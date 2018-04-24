@@ -289,6 +289,44 @@ public abstract class StringUtils {
         return sb.toString();
     }
 
+    /**
+     * 将一个字符串内的子串替换成其他的字符串
+     * @param inString 要检测的字符串
+     * @param oldPattern 要替换的字符串
+     * @param newPattern 要插入的字符串
+     * @return 替换后的字符串
+     */
+    public static String replace(String inString, String oldPattern, String newPattern) {
+        if (!hasLength(inString) || !hasLength(oldPattern) || newPattern == null) {
+            return inString;
+        }
+
+        int index = inString.indexOf(oldPattern);
+        if (index == -1) {
+            return inString;
+        }
+
+        int capacity = inString.length();
+        if (newPattern.length() > oldPattern.length()) {
+            capacity += 16;
+        }
+
+        StringBuilder sb = new StringBuilder(capacity);
+        int pos = 0;
+        int patLen = oldPattern.length();
+
+        while (index >= 0) {
+            sb.append(inString.substring(pos, index));
+            sb.append(newPattern);
+            pos = index + patLen;
+            index = inString.indexOf(oldPattern, pos);
+        }
+
+        sb.append(inString.substring(pos));
+        return sb.toString();
+
+    }
+
 
 
 }

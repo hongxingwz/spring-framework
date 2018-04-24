@@ -19,4 +19,8 @@ public abstract class ClassUtils {
         // TODO: 2018/4/9
         return null;
     }
+
+    public static ClassLoader getDefaultClassLoader() {
+        return null;
+    }
 }

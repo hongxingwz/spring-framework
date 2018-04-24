@@ -5,4 +5,6 @@ package org.springframework.beans;
  * @since 2018/4/20
  */
 public interface BeanMetadataElement {
+
+    Object getSource();
 }

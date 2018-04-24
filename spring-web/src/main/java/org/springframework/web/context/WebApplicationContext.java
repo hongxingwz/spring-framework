@@ -1,4 +1,6 @@
-package org.springframework.context;
+package org.springframework.web.context;
+
+import org.springframework.context.ApplicationContext;
 
 import javax.servlet.ServletContext;
 
